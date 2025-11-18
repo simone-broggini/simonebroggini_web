@@ -1,0 +1,58 @@
+
+        :root {
+            --pico-primary: #7B68EE; /* Muted Purple */
+            --pico-secondary: #333; /* Dark Grey */
+            --pico-background-color: #FFFFFF; /* White background */
+        }
+        body {
+            background-color: #FFFFFF !important; /* Explicitly set to white with !important */
+            color: var(--pico-secondary); /* Very Dark Grey for general text */
+        }
+        p, li {
+            color: var(--pico-secondary); /* Ensure p and li tags use the dark grey */
+        }
+        /* Custom overrides if needed */
+        nav a { margin-right: 1em; }
+        a { color: var(--pico-primary); } /* Apply primary color to links */
+        h1 { color: var(--pico-primary); } /* Apply primary color to h1 headings */
+        .profile-image {
+          border-radius: 50%;
+          width: 100%; /* Make it fill its container */
+          height: auto; /* Maintain aspect ratio */
+          max-width: 250px; /* Limit maximum size to 250px */
+          aspect-ratio: 1 / 1; /* Ensure it remains circular */
+          object-fit: cover;
+          margin-bottom: 1.5rem;
+        }
+        .grid-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center horizontally as well */
+        }
+        .hamburger-icon {
+          width: 24px;
+          height: 24px;
+          stroke: currentColor;
+        }
+        /* Hide the dropdown arrow for the menu button */
+        details[role="list"] > summary::after {
+            display: none;
+        }
+
+        /* Responsive Navigation */
+        .desktop-nav {
+            display: none; /* Hidden by default on small screens */
+        }
+        .mobile-nav {
+            display: block; /* Shown by default on small screens */
+        }
+
+        @media (min-width: 768px) { /* Adjust breakpoint as needed */
+            .desktop-nav {
+                display: flex; /* Show on larger screens */
+            }
+            .mobile-nav {
+                display: none; /* Hide on larger screens */
+            }
+        }
+    
